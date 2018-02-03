@@ -46,6 +46,15 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get ('/projects', (req, res) => {
+    res.render ('projects.hbs', {
+        home: 'My Projects',
+        pageTitle: 'Projects Page',
+    });
+})
+
+
+
 app.get ('/about', (req, res) => {
     res.render ('about.hbs', {
         home: 'My Wonderful Node Page',
