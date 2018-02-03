@@ -1,9 +1,9 @@
 const express = require ('express');
 const hbs = require('hbs');
-const app = express();
 const fs = require ('fs');
 
-let treq;
+const port = process.env.PORT || 3000;
+const app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set ('view engine', 'hbs');
@@ -41,9 +41,8 @@ app.get('/', (req, res) => {
         title: 'My Home Page',
         welcome: 'Welcome to my Node Page',
         name: 'Santanu',
-        likes: ['sleeping','reading','hacking'],
+        likes: ['sleeping','reading','hacking till he is sore'],
         age: 'ancient',
-        req: treq
     })
 })
 
@@ -60,6 +59,6 @@ app.get ('/bad', (req, res) => {
     )
 })
 
-app.listen (3000, () => {
-    console.log ('server is up at port 3000');
+app.listen (port, () => {
+    console.log (`server is up at port ${port}`);
 });
